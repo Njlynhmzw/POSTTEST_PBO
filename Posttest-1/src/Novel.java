@@ -7,5 +7,6 @@ public class Novel {
         this.judul = judul;
         this.penulis = penulis;
         this.harga = harga;
+
     }
 }

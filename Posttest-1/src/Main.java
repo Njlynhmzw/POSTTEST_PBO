@@ -1,76 +1,88 @@
 import java.util.*;
+import java.io.*;
 
-public class Main {
+void main() {
 
-    static ArrayList<Novel> daftarNovel = new ArrayList<>();
-    static ArrayList<Pelanggan> daftarPelanggan = new ArrayList<>();
-    static Scanner input = new Scanner(System.in);
+    ArrayList<Novel> daftarNovel = new ArrayList<>();
+    ArrayList<Pelanggan> daftarPelanggan = new ArrayList<>();
 
-    public static void main(String[] args) {
+    Scanner input = new Scanner(System.in);
 
-        int pilihan;
+    int pilihan;
 
-        do {
-            System.out.println("\n=== MENU PENJUALAN NOVEL ===");
-            System.out.println("1. Tambah Novel");
-            System.out.println("2. Tampil Novel");
-            System.out.println("3. Update Novel");
-            System.out.println("4. Hapus Novel");
-            System.out.println("5. Tambah Pelanggan");
-            System.out.println("6. Tampil Pelanggan");
-            System.out.println("0. Exit");
+    do {
 
-            System.out.print("Masukkan pilihan : ");
-            pilihan = input.nextInt();
-            input.nextLine();
+        System.out.println("\n=== Sistem Manajemen Penjualan Novel ===");
+        System.out.println("1. Tambah Daftar Novel");
+        System.out.println("2. Tampilkan Daftar Novel");
+        System.out.println("3. Ubah Daftar Novel");
+        System.out.println("4. Hapus Daftar Novel");
+        System.out.println("5. Tambah Pelanggan");
+        System.out.println("6. Tampil Pelanggan");
+        System.out.println("0. Exit");
 
-            switch (pilihan) {
-                case 1 -> TambahNovel();
-                case 2 -> TampilNovel();
-                case 3 -> UpdateNovel();
-                case 4 -> HapusNovel();
-                case 5 -> TambahPelanggan();
-                case 6 -> TampilPelanggan();
-            }
-
-        } while (pilihan != 0);
-
-        System.out.println("Program selesai");
-    }
-
-    static void TambahNovel() {
-        System.out.print("Judul : ");
-        String judul = input.nextLine();
-
-        System.out.print("Penulis : ");
-        String penulis = input.nextLine();
-
-        System.out.print("Harga : ");
-        int harga = input.nextInt();
+        System.out.print("Masukkan pilihan : ");
+        pilihan = input.nextInt();
         input.nextLine();
 
-        Novel novel = new Novel(judul, penulis, harga);
-        daftarNovel.add(novel);
-    }
+        switch (pilihan) {
+            case 1 -> TambahNovel(daftarNovel, input);
+            case 2 -> TampilNovel(daftarNovel);
+            case 3 -> UbahDaftarNovel(daftarNovel, input);
+            case 4 -> HapusNovel(daftarNovel, input);
+            case 5 -> TambahPelanggan(daftarPelanggan, input);
+            case 6 -> TampilPelanggan(daftarPelanggan);
+        }
+    } while (pilihan != 0);
 
-    static void TampilNovel() {
-        if (daftarNovel.isEmpty()) {
-            System.out.println("Data kosong");
-        } else {
-            for (int i = 0; i < daftarNovel.size(); i++) {
-                System.out.println("\nNovel ke: " + i);
-                System.out.println("Judul   : " + daftarNovel.get(i).judul);
-                System.out.println("Penulis : " + daftarNovel.get(i).penulis);
-                System.out.println("Harga   : " + daftarNovel.get(i).harga);
-            }
+    System.out.println("Program selesai");
+}
+
+void TambahNovel(ArrayList<Novel> daftarNovel, Scanner input) {
+    System.out.print("Masukkan judul novel yang baru : ");
+    String judul = input.nextLine();
+
+    System.out.print("Masukkan penulis novel yang baru : ");
+    String penulis = input.nextLine();
+
+    System.out.print("Masukkan harga novel yang baru: ");
+    int harga = input.nextInt();
+    input.nextLine();
+
+    Novel novel = new Novel(judul, penulis, harga);
+    daftarNovel.add(novel);
+    System.out.print("Novel berhasil ditambahkan ");
+}
+
+void TampilNovel(ArrayList<Novel> daftarNovel) {
+
+    if (daftarNovel.isEmpty()) {
+        System.out.println("Daftar novel kosong");
+    } else {
+
+        int i = 1;
+
+        for (Novel novel : daftarNovel) {
+
+            System.out.println("Novel : " + i);
+            System.out.println("Judul : " + novel.judul);
+            System.out.println("Penulis : " + novel.penulis);
+            System.out.println("Harga : " + novel.harga);
+            System.out.println();
+
+            i++;
         }
     }
+}
 
-    static void UpdateNovel() {
-        TampilNovel();
+void UbahDaftarNovel(ArrayList<Novel> daftarNovel, Scanner input) {
 
-        System.out.print("Pilih Novel : ");
-        int index = input.nextInt();
+    TampilNovel(daftarNovel);
+
+    if (!daftarNovel.isEmpty()) {
+
+        System.out.print("Pilih novel yang ingin diupdate : ");
+        int index = input.nextInt() - 1;
         input.nextLine();
 
         System.out.print("Judul baru : ");
@@ -83,39 +95,53 @@ public class Main {
         int harga = input.nextInt();
         input.nextLine();
 
-        daftarNovel.set(index, new Novel(judul, penulis, harga));
+        Novel novel = new Novel(judul, penulis, harga);
+        daftarNovel.set(index, novel);
+        TampilNovel(daftarNovel);
+        System.out.print("Novel berhasil diubah");
     }
+}
 
-    static void HapusNovel() {
-        TampilNovel();
+void HapusNovel(ArrayList<Novel> daftarNovel, Scanner input) {
+
+    TampilNovel(daftarNovel);
+
+    if (!daftarNovel.isEmpty()) {
 
         System.out.print("Pilih novel yang ingin dihapus : ");
         int index = input.nextInt();
         input.nextLine();
 
         daftarNovel.remove(index);
+        TampilNovel(daftarNovel);
+        System.out.print("Novel berhasil dihapus");
     }
+}
 
-    static void TambahPelanggan() {
-        System.out.print("Nama : ");
-        String nama = input.nextLine();
+void TambahPelanggan(ArrayList<Pelanggan> daftarPelanggan, Scanner input) {
 
-        System.out.print("Alamat : ");
-        String alamat = input.nextLine();
+    System.out.print("Masukkan nama : ");
+    String nama = input.nextLine();
 
-        Pelanggan pelanggan = new Pelanggan(nama, alamat);
-        daftarPelanggan.add(pelanggan);
-    }
+    System.out.print("Masukkan alamat : ");
+    String alamat = input.nextLine();
 
-    static void TampilPelanggan() {
-        if (daftarPelanggan.isEmpty()) {
-            System.out.println("Data pelanggan kosong");
-        } else {
-            for (Pelanggan p : daftarPelanggan) {
-                System.out.println("Nama   : " + p.nama);
-                System.out.println("Alamat : " + p.alamat);
-                System.out.println();
-            }
+    Pelanggan pelanggan = new Pelanggan(nama, alamat);
+    daftarPelanggan.add(pelanggan);
+    System.out.print(" Data Pelanggam berhasil ditambah");
+}
+
+void TampilPelanggan(ArrayList<Pelanggan> daftarPelanggan) {
+
+    if (daftarPelanggan.isEmpty()) {
+        System.out.println("Data pelanggan kosong");
+    } else {
+
+        for (Pelanggan pelanggan : daftarPelanggan) {
+
+            System.out.println("Nama : " + pelanggan.nama);
+            System.out.println("Alamat : " + pelanggan.alamat);
+            System.out.println();
         }
     }
 }
