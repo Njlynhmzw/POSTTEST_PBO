@@ -81,49 +81,49 @@ Fungsi TampilPelanggan() digunakan untuk menampilkan data pelanggan yang tersimp
 # Tampilan Program
 
 ## Menu Utama Program
-![main.png](../../POSTTEST_2/POSTTEST_2/Assets/main.png)
+![main.png](Assets/main.png)
 
 Menu utama berfungsi untuk memilih fitur yang tersedia pada sistem manajemen penjualan novel.
 
 ---
 
 ## Menu 1 : Tambah Novel
-![Tambah-novel.png](../../POSTTEST_2/POSTTEST_2/Assets/Tambah-novel.png)
+![Tambah-novel.png](Assets/Tambah-novel.png)
 
 Program akan meminta pengguna untuk menginputkan **judul, penulis, dan harga novel** yang ingin ditambahkan ke dalam daftar novel. Setelah data dimasukkan, sistem akan menampilkan pesan bahwa **novel berhasil ditambahkan**.
 
 ---
 
 ## Menu 2 : Tampilkan Daftar Novel
-![TampilNovel.png](../../POSTTEST_2/POSTTEST_2/Assets/TampilNovel.png)
+![TampilNovel.png](Assets/TampilNovel.png)
 
 Program akan menampilkan **seluruh daftar novel** yang tersimpan di dalam sistem.
 
 ---
 
 ## Menu 3 : Ubah Data Novel
-![UpdateNovel.png](../../POSTTEST_2/POSTTEST_2/Assets/UpdateNovel.png)
+![UpdateNovel.png](Assets/UpdateNovel.png)
 
 Program akan menampilkan daftar novel terlebih dahulu, kemudian pengguna diminta untuk **memilih novel yang ingin diubah**. Setelah itu pengguna dapat menginputkan **judul, penulis, dan harga baru** dari novel tersebut. Sistem kemudian akan menampilkan pesan bahwa **data novel berhasil diubah**.
 
 ---
 
 ## Menu 4 : Hapus Data Novel
-![Hapusnovel.png](../../POSTTEST_2/POSTTEST_2/Assets/Hapusnovel.png)
+![Hapusnovel.png](Assets/Hapusnovel.png)
 
 Program akan menampilkan daftar novel dan meminta pengguna untuk memilih **novel yang ingin dihapus**. Setelah dipilih, sistem akan menghapus data tersebut dan menampilkan pesan bahwa **novel berhasil dihapus**.
 
 ---
 
 ## Menu 5 : Tambah Pelanggan
-![tambah-pelanggan.png](../../POSTTEST_2/POSTTEST_2/Assets/tambah-pelanggan.png)
+![tambah-pelanggan.png](Assets/tambah-pelanggan.png)
 
 Program akan meminta pengguna untuk menginputkan **nama dan alamat pelanggan** yang akan disimpan ke dalam sistem.
 
 ---
 
 ## Menu 6 : Tampilkan Data Pelanggan
-![Tampil-pelanggan.png](../../POSTTEST_2/POSTTEST_2/Assets/Tampil-pelanggan.png)
+![Tampil-pelanggan.png](Assets/Tampil-pelanggan.png)
 
 Program akan menampilkan **data pelanggan** yang telah tersimpan di dalam sistem.
 
