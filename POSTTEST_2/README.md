@@ -17,6 +17,67 @@ Pada program ini, data pada class Novel dan Pelanggan dibuat dengan access modif
 
 ---
 
+# Penjelasan Class
+
+## Class Novel
+Class Novel digunakan untuk menyimpan data novel yang terdapat pada sistem penjualan novel. Class ini menerapkan konsep Encapsulation dengan menggunakan access modifier private serta method getter dan setter untuk mengakses data.
+
+Atribut yang terdapat pada class Novel yaitu:
+
+- judul → menyimpan judul novel
+- penulis → menyimpan nama penulis novel
+- harga → menyimpan harga novel
+
+Atribut tersebut dibuat private sehingga tidak dapat diakses langsung dari luar class dan hanya dapat diakses menggunakan getter dan setter.
+
+---
+
+## Class Pelanggan
+Class Pelanggan digunakan untuk menyimpan data pelanggan pada sistem penjualan novel.
+
+Class ini juga menerapkan konsep Encapsulation dengan membuat atribut bersifat private dan mengaksesnya menggunakan method getter dan setter.
+
+Atribut pada class Pelanggan yaitu:
+
+- nama → menyimpan nama pelanggan
+- alamat → menyimpan alamat pelanggan
+
+Dengan adanya class ini, data pelanggan dapat dikelola secara lebih terstruktur di dalam program.
+
+---
+
+# Penjelasan Fungsi Program
+
+## Fungsi TambahNovel()
+Fungsi TambahNovel() digunakan untuk menambahkan data novel baru ke dalam sistem. Program akan meminta pengguna memasukkan judul novel, penulis, dan harga novel kemudian data tersebut disimpan ke dalam ArrayList daftarNovel.
+
+---
+
+## Fungsi TampilNovel()
+Fungsi TampilNovel() digunakan untuk menampilkan seluruh data novel yang tersimpan di dalam sistem. Jika daftar novel kosong maka program akan menampilkan pesan bahwa data kosong.
+
+---
+
+## Fungsi UbahDaftarNovel()
+Fungsi UbahDaftarNovel() digunakan untuk memperbarui data novel yang sudah ada. Program akan menampilkan daftar novel terlebih dahulu kemudian pengguna memilih novel yang ingin diubah dan memasukkan data novel yang baru.
+
+---
+
+## Fungsi HapusNovel()
+Fungsi HapusNovel() digunakan untuk menghapus data novel dari sistem. Program akan menampilkan daftar novel kemudian pengguna memilih novel yang ingin dihapus.
+
+---
+
+## Fungsi TambahPelanggan()
+Fungsi TambahPelanggan() digunakan untuk menambahkan data pelanggan ke dalam sistem. Program akan meminta pengguna memasukkan nama dan alamat pelanggan kemudian data tersebut disimpan ke dalam ArrayList daftarPelanggan.
+
+---
+
+## Fungsi TampilPelanggan()
+Fungsi TampilPelanggan() digunakan untuk menampilkan data pelanggan yang tersimpan di dalam sistem.
+
+---
+
 # Tampilan Program
 
 ## Menu Utama Program
